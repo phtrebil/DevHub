@@ -3,7 +3,6 @@ package com.example.devhub
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -21,6 +20,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.example.devhub.ui.theme.DevHubTheme
 
 class MainActivity : ComponentActivity() {
@@ -59,13 +59,13 @@ class MainActivity : ComponentActivity() {
                     )
                     .height(boxAltura)
             ) {
-                val profileImage = painterResource(R.drawable.perfil)
-                Image(
-                    painter = profileImage,
+                AsyncImage(
+                    "https://avatars.githubusercontent.com/u/103342740?v=4",
                     contentDescription = "Foto do Perfil",
+                    placeholder = painterResource(id = R.drawable.usuario_foreground),
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .offset(y = alturaImagem/2)
+                        .offset(y = alturaImagem / 2)
                         .size(alturaImagem)
                         .align(Alignment.BottomCenter)
                         .clip(CircleShape)
