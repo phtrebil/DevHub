@@ -20,12 +20,19 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
 import coil.compose.AsyncImage
+import com.example.devhub.data.DevHubApi
 import com.example.devhub.ui.theme.DevHubTheme
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        lifecycleScope.launch {
+            DevHubApi(this@MainActivity).DevHubService.buscaDev("phtrebil")
+
+        }
         setContent {
             DevHubTheme {
                 // A surface container using the 'background' color from the theme
@@ -87,8 +94,6 @@ class MainActivity : ComponentActivity() {
                     style = MaterialTheme.typography.body2
                 )
             }
-
-
         }
     }
 
