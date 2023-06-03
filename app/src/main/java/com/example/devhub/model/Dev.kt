@@ -2,7 +2,7 @@ package com.example.devhub.model
 
 import com.google.gson.annotations.SerializedName
 
-class Dev(
+data class Dev(
     @SerializedName("avatar_url")
     val imagem: String,
     @SerializedName("name")

@@ -8,5 +8,5 @@ import retrofit2.http.Path
 interface DevHubRepository {
 
     @GET("users/{user}")
-    fun buscaDev(@Path("user") user:String?): Call<Dev>
+    suspend fun buscaDev(@Path("user") user:String?): Dev
 }
