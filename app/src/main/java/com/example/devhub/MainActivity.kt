@@ -7,11 +7,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.example.devhub.ui.tela.SearchableTopBar
 import com.example.devhub.ui.tela.TelaDePerfil
 import com.example.devhub.ui.theme.DevHubTheme
 import com.google.android.material.search.SearchBar
 
 class MainActivity : ComponentActivity() {
+
+    var usuario = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,8 +24,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SearchBar()
-                    TelaDePerfil("phtrebil")
+                    SearchableTopBar()
+                    TelaDePerfil(usuario = usuario)
                 }
             }
         }
