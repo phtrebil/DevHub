@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.example.devhub.ui.tela.TelaDePerfil
 import com.example.devhub.ui.theme.DevHubTheme
+import com.google.android.material.search.SearchBar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    SearchBar()
                     TelaDePerfil("phtrebil")
                 }
             }
